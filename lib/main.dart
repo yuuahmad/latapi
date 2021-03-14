@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:latapi/pages/apiheroig_page.dart';
 import 'package:latapi/pages/apisederhana_page.dart';
 import 'package:latapi/pages/apibanyaksederhana_page.dart';
 
@@ -12,21 +13,12 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int hitungan = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: Scaffold(
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              setState(() {
-                hitungan++;
-              });
-              print(hitungan);
-            },
-          ),
           appBar: AppBar(
             title: Text('Latihan Api'),
             centerTitle: true,
@@ -44,6 +36,11 @@ class _MyAppState extends State<MyApp> {
                   judul: 'Latihan Api Banyak Sederhana',
                   halaman: ApiBanyakSederhana(),
                   ikonsaya: Icons.add_circle,
+                ),
+                Listsaya(
+                  judul: 'Api Heroig',
+                  halaman: ApiHeroig(),
+                  ikonsaya: Icons.add_a_photo,
                 )
               ],
             ),

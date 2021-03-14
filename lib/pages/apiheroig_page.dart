@@ -3,18 +3,18 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
-class ApiBanyakSederhana extends StatefulWidget {
+class ApiHeroig extends StatefulWidget {
   @override
-  _ApiBanyakSederhanaState createState() => _ApiBanyakSederhanaState();
+  _ApiHeroigState createState() => _ApiHeroigState();
 }
 
-class _ApiBanyakSederhanaState extends State<ApiBanyakSederhana> {
+class _ApiHeroigState extends State<ApiHeroig> {
   final HttpService httpService = HttpService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Api Banyak Sederhana'),
+        title: Text('Api Heroig'),
       ),
       // mengapa future builder?
       // karena future builder adalah
@@ -55,8 +55,8 @@ class _ApiBanyakSederhanaState extends State<ApiBanyakSederhana> {
 
 class Post {
   // ini adalah inisiasi variabel pada class Post
-  final int userId;
-  final int id;
+  final String userId;
+  final String id;
   final String title;
   final String body;
 
@@ -85,10 +85,10 @@ class Post {
       // seperti yang bisa dilihat dalam data jsonnya,key dari userid sampai body adalah string
       // dan valuenya adalah dynamic atau variabel yang jenis datanya berubah-ubah
       // nah, variabel dengan jenis data yang berubah-ubah ini akan diganti dengan satu jenis variabel data sendiri dengan perintah "as"
-      userId: json['userId'] as int,
-      id: json['id'] as int,
-      title: json['title'] as String,
-      body: json['body'] as String,
+      userId: json['id'] as String,
+      id: json['token'] as String,
+      title: json['debitair'] as String,
+      body: json['servo_low'] as String,
     );
   }
 }
@@ -96,7 +96,7 @@ class Post {
 class HttpService {
   // ini adalah penegasan link mana yang ingin diambil datanya
   // jangan lupa dikasih final agar datanya ngak kemana-mana #konstan
-  final linkApi = Uri.https('jsonplaceholder.typicode.com', '/posts');
+  final linkApi = Uri.https("heroig.iteraiothme.com", "/api/123456789");
 
   Future<List<Post>> dapatkanPost() async {
     // abmil data yang ada pada link menggunakan perintah ini

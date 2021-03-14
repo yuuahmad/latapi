@@ -10,7 +10,7 @@ class ApiSederhana extends StatefulWidget {
 class _ApiSederhanaState extends State<ApiSederhana> {
   void dapatkanData() async {
     // ini adalah perintah untuk menlakukan deskripsi link api mana yang mau ditampilkan datanya
-    final linkurl = Uri.https('jsonplaceholder.typicode.com', '/posts/1');
+    final linkurl = Uri.https('jsonplaceholder.typicode.com', 'photos/2');
 
     // ini perintah mendapatkan data dari apinya dengan menunggu (await) terlebih dahulu datanya terunduh, kemudian dimasukkan kedalam variabel
     var respon = await http.get(linkurl);
